@@ -202,7 +202,7 @@ function plot_curr(hObject, handles)
     linear_phase = gen_linear_phase(res,theta,phi);
     spherical_phase = gen_spherical_phase(res, prop_z,shift);
     total_complex = oam_complex.*exp(1i*(linear_phase + spherical_phase));
-    total_phase = slm_amp_phase( total_complex, grid_unit, x_blazed_flag);
+    total_phase = slm_amp_phase( total_complex);
     total_phase_pos = total_phase + min(total_phase(:));
     mask = out_slm_phase(total_phase_pos);
     axes(handles.axes1); 
